@@ -1,0 +1,21 @@
+spring:
+  redis:
+    # Redis数据库索引(默认为0)
+    database: 0
+    # Redis服务器地址
+    host: 127.0.0.1
+    # Redis服务器连接端口
+    port: 6379
+    # 数据库连接超时时间,2.x中该参数的类型为Duration,这里在配置的时候需要指明单位
+    timeout: 30s
+    # 连接池配置,2.0中直接使用jedis或者lettuce配置连接池
+    jedis:
+      pool:
+        #最大连接数据库连接数,设 0 为没有限制
+        max-active: 2000
+        #最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制
+        max-wait: 30s
+        #最大等待连接中的数量,设 0 为没有限制
+        max-idle: 500
+        #最小等待连接中的数量,设 0 为没有限制
+        min-idle: 8
