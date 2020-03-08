@@ -35,7 +35,6 @@ import java.util.regex.Matcher;
 })
 public class SqlStatementInterceptor implements Interceptor {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
         Object returnValue;
@@ -111,10 +110,6 @@ public class SqlStatementInterceptor implements Interceptor {
         return sql;
     }
 
-    /**
-     * @param obj
-     * @return
-     */
     private String getParameterValue(Object obj) {
         String value = null;
         if (obj instanceof String) {
